@@ -81,10 +81,6 @@ ENV ODOO_RC /etc/odoo/odoo.conf
 
 COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
 
-#install database and modules
-RUN odoo -d odoo
-RUN odoo -d odoo -r odoo -w odoo -i crm,hr
-
 # Set default user when running the container
 USER odoo
 
