@@ -80,10 +80,10 @@ EXPOSE 8069 8071 8072
 ENV ODOO_RC /etc/odoo/odoo.conf
 
 COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
+RUN mkdir /mnt/testcommand
 
 # Set default user when running the container
 USER odoo
 
 ENTRYPOINT ["/entrypoint.sh"]
-RUN mkdir /mnt/testcommand
 CMD ["odoo"]
